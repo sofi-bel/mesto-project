@@ -1,0 +1,13 @@
+.button {
+  line-height: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  opacity: 0.6;
+}

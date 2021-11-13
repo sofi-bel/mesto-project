@@ -1,0 +1,10 @@
+.button_type_edit {
+  padding: 3px;
+  border: 1px solid #ffffff;
+}
+
+@media screen and (min-width: 1280px) {
+  .button_type_edit {
+    padding: 6px;
+  }
+}
