@@ -1,5 +1,12 @@
 .page {
+  background-color: #545454;
   font-family: 'Inter', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 1280px) {
+  .page {
+    max-width: 880px;
+  }
 }
