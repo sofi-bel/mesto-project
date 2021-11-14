@@ -5,6 +5,7 @@
 @import url(../blocks/page/__header/page__header.css);
 @import url(../blocks/page/__main/page__main.css);
 @import url(../blocks/page/__profile/page__profile.css);
+@import url(../blocks/page/__elements/page__elements.css);
 @import url(../blocks/page/__footer/page__footer.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
@@ -22,5 +23,12 @@
 @import url(../blocks/button/__icon/button__icon.css);
 @import url(../blocks/button/__icon/_type/_edit/button__icon_type_edit.css);
 @import url(../blocks/button/__icon/_type/_add/button__icon_type_add.css);
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__list/elements__list.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__description/element__description.css);
+@import url(../blocks/element/__title/element__title.css);
+@import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
