@@ -28,4 +28,4 @@
 
 ## Demo
 
-[Посмотреть](https://a-meti.github.io/mesto-project/index.html)
+[Посмотреть](https://a-meti.github.io/mesto-project/)
