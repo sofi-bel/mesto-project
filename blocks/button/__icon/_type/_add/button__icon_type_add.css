@@ -4,7 +4,7 @@
   border-radius: 2px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
   .button__icon_type_add {
     width: 22px;
     height: 22px;
