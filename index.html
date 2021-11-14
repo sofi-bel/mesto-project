@@ -13,10 +13,13 @@
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page page_centered">
+
   <header class="header page__header">
     <div class="header__logo"></div>
   </header>
+
   <main class="main page__main">
+
     <section class="profile page__profile">
       <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
       <div class="profile__info">
@@ -36,6 +39,7 @@
         <img src="./images/add-icon.svg" alt="Иконка добавления" class="button__icon button__icon_type_add">
       </button>
     </section>
+
     <section class="elements page__elements">
       <ul class="elements__list">
         <li class="element">
@@ -94,11 +98,26 @@
         </li>
       </ul>
     </section>
+
   </main>
+
   <footer class="footer page__footer">
     <p class="footer__copyright">
       &copy; 2021 Mesto Russia
     </p>
   </footer>
+
+  <div class="popup page__popup">
+    <div class="popup__container">
+      <img src="./images/close-icon.svg" alt="Иконка закрытия" class="popup__close-button button">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form form" name="popup">
+        <input type="text" class="form__input" placeholder="Жак-Ив Кусто">
+        <input type="text" class="form__input" placeholder="Исследователь океана">
+        <button class="form__button" type="button">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>
