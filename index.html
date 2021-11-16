@@ -27,17 +27,14 @@
           <h1 class="profile__title">
           Жак-Ив Кусто
           </h1>
-          <button class="button button_type_edit profile__button profile__button_type_edit">
-            <img src="./images/edit-icon.svg" alt="Иконка редактирования" class="button__icon button__icon_type_edit">
+          <button type="button" aria-label="Иконка редактирования" class="profile__button profile__button_type_edit">
           </button>
         </div>
         <p class="profile__subtitle">
           Исследователь океана
         </p>
       </div>
-      <button class="button button_type_add profile__button ">
-        <img src="./images/add-icon.svg" alt="Иконка добавления" class="button__icon button__icon_type_add">
-      </button>
+      <button type="button" aria-label="Иконка добавления" class="profile__button profile__button_type_add"></button>
     </section>
 
     <section class="elements page__elements">
@@ -109,7 +106,8 @@
 
   <div class="popup page__popup">
     <div class="popup__container">
-      <img src="./images/close-icon.svg" alt="Иконка закрытия" class="popup__close-button button">
+<!--TODO: заменить на кнопку-->
+      <img src="./images/close-icon.svg" alt="Иконка закрытия" class="popup__close-button">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form form" name="popup">
         <input name="name" type="text" class="form__input" placeholder="Жак-Ив Кусто">

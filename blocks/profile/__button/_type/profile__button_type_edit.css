@@ -1,6 +1,6 @@
-.button_type_edit {
-  max-height: 18px;
-  padding: 3px;
+.profile__button_type_edit {
+  width: 18px;
+  height: 18px;
   margin: auto;
   position: absolute;
   top: 0;
@@ -8,14 +8,15 @@
   right: -27px;
   border: 1px solid #ffffff;
   align-self: center;
+  background-image: url(../../../../images/edit-icon.svg);
 }
 
 @media screen and (min-width: 768px) {
-  .button_type_edit {
-    max-height: 24px;
-    padding: 6px;
+  .profile__button_type_edit {
+    width: 24px;
+    height: 24px;
     margin: 7px 0 0;
     position: relative;
-    right: initial;
+    right: 0;
   }
 }

@@ -1,14 +1,18 @@
-.button {
+.profile__button {
   line-height: 0;
   padding: 0;
-  background: transparent;
   border: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   transition: opacity 3ms ease;
+  background-color: transparent;
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
-.button:hover {
+.profile__button:hover {
   opacity: 0.6;
 }

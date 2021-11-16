@@ -10,6 +10,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: opacity 3ms ease;
+  cursor: pointer;
 }
 
 .element__like-button:hover {
