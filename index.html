@@ -39,60 +39,20 @@
 
     <section class="elements page__elements">
       <ul class="elements__list">
-        <li class="element">
-          <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Карачаевск
-            </h2>
-            <button type="button" class="element__like-button element__like-button_active" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Гора Эльбрус
-            </h2>
-            <button type="button" class="element__like-button" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/dombay.jpg" alt="Домбай" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Домбай
-            </h2>
-            <button type="button" class="element__like-button" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Гора Эльбрус
-            </h2>
-            <button type="button" class="element__like-button" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/dombay.jpg" alt="Домбай" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Домбай
-            </h2>
-            <button type="button" class="element__like-button" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия" class="element__image">
-          <div class="element__description">
-            <h2 class="element__title">
-              Карачаево-Черкессия
-            </h2>
-            <button type="button" class="element__like-button" aria-label="Кнопка нравится"></button>
-          </div>
-        </li>
+        <template id="element-template">
+          <li class="element">
+            <button type="button" class="element__delete-button"
+                    aria-label="Кнопка удалить">
+            </button>
+            <img src="" alt="" class="element__image">
+            <div class="element__description">
+              <h2 class="element__title"></h2>
+              <button type="button" class="element__like-button"
+                      aria-label="Кнопка нравится">
+              </button>
+            </div>
+          </li>
+        </template>
       </ul>
     </section>
 
@@ -104,13 +64,25 @@
     </p>
   </footer>
 
-  <div class="popup page__popup">
+  <div class="popup page__popup popup_type_edit-profile">
+      <div class="popup__container">
+        <button type="button" aria-label="Иконка закрытия" class="popup__close-button popup__close-button_type_edit-profile"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form class="popup__form form form_type_edit-profile" name="popup">
+            <input name="name" type="text" class="form__input form__input_type_name" value="Жак-Ив Кусто">
+            <input name="job" type="text" class="form__input form__input_type_job" value="Исследователь океана">
+            <button type="submit" class="form__button">Сохранить</button>
+          </form>
+      </div>
+  </div>
+
+  <div class="popup page__popup popup_type_add-place">
     <div class="popup__container">
-      <button type="button" aria-label="Иконка закрытия" class="popup__close-button"></button>
-      <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form form" name="popup">
-        <input name="name" type="text" class="form__input form__input_type_name" value="Жак-Ив Кусто">
-        <input name="job" type="text" class="form__input form__input_type_job" value="Исследователь океана">
+      <button type="button" aria-label="Иконка закрытия" class="popup__close-button popup__close-button_type_add-place"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form form form_type_add-place" name="popup">
+        <input name="place" type="text" class="form__input form__input_type_place" placeholder="Название">
+        <input name="link" type="url" class="form__input form__input_type_url" placeholder="Ссылка на картинку">
         <button type="submit" class="form__button">Сохранить</button>
       </form>
     </div>
