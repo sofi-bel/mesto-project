@@ -28,14 +28,14 @@ function closeModalWindow(evt) {
 
 function initForm() {
   const editProfileForm = document.querySelector('.form_type_edit-profile');
-  editProfileForm.addEventListener('submit', UpdateProfile);
+  editProfileForm.addEventListener('submit', updateProfile);
   const addPlaceForm = document.querySelector('.form_type_add-place');
   addPlaceForm.addEventListener('submit', addPlace);
 }
 
 initForm();
 
-function UpdateProfile(evt) {
+function updateProfile(evt) {
   evt.preventDefault();
   const profileInfo = document.querySelector('.profile__info');
   const nameInput = document.querySelector('.form__input_type_name');
