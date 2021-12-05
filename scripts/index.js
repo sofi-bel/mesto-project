@@ -12,14 +12,18 @@ closePopupButton.forEach(function(item) {
 function openModalWindow(evt) {
   if(evt.target.classList.contains('profile__button_type_edit')) {
     const popupEditProfile = document.querySelector('.popup_type_edit-profile');
-    popupEditProfile.classList.add('popup_opened');
+    openPopup(popupEditProfile);
   } else if(evt.target.classList.contains('profile__button_type_add')) {
     const popupAddPlace = document.querySelector('.popup_type_add-place');
-    popupAddPlace.classList.add('popup_opened');
+    openPopup(popupAddPlace);
   } else if(evt.target.classList.contains('element__image')) {
     const popupImagePlace = document.querySelector('.popup_type_image-place');
-    popupImagePlace.classList.add('popup_opened');
+    openPopup(popupImagePlace);
   }
+}
+
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
 }
 
 function closeModalWindow(evt) {
