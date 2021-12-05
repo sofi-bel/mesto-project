@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const addNewCardButton = document.querySelector('.profile__button_type_add');
   addNewCardButton.addEventListener('click', openModalWindow);
 
-  initCards();
-  initForm();
-
   function openModalWindow(evt) {
     if(evt.target.classList.contains('profile__button_type_edit')) {
       const popupEditProfile = document.querySelector('.popup_type_edit-profile');
@@ -39,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.form_type_edit-profile').addEventListener('submit', UpdateProfile);
     document.querySelector('.form_type_add-place').addEventListener('submit', addPlace);
   }
+
+  initForm();
 
   function UpdateProfile(evt) {
     evt.preventDefault();
@@ -101,12 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  initCards();
+
   function addCard(item) {
     const cardTemplate = document.querySelector('#element-template').content;
     const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
+    const cardImage = cardElement.querySelector('.element__image');
 
-    cardElement.querySelector('.element__image').src = item.link;
-    cardElement.querySelector('.element__image').alt = item.name;
+    cardImage.src = item.link;
+    cardImage.alt = item.name;
+
     cardElement.querySelector('.element__title').textContent = item.name;
 
     cardElement.querySelector('.element__like-button').addEventListener('click', function (evt) {
@@ -114,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     cardElement.querySelector('.element__delete-button').addEventListener('click', deleteCard);
 
-    cardElement.querySelector('.element__image').addEventListener('click', initImagePopup);
+    cardImage.addEventListener('click', initImagePopup);
 
     document.querySelector('.elements__list').prepend(cardElement);
   }
@@ -126,9 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function initImagePopup(evt) {
     const imagePopupTemplate = document.querySelector('#image-template').content;
     const imagePopupElement = imagePopupTemplate.querySelector('.image-place').cloneNode(true);
+    const imagePopup = imagePopupElement.querySelector('.image-place__image');
 
-    imagePopupElement.querySelector('.image-place__image').src = evt.target.src;
-    imagePopupElement.querySelector('.image-place__image').alt = evt.target.alt;
+    imagePopup.src = evt.target.src;
+    imagePopup.alt = evt.target.alt;
     imagePopupElement.querySelector('.image-place__caption').textContent = evt.target.alt;
 
     document.querySelector('.popup_type_image-place').append(imagePopupElement);
