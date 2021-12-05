@@ -19,11 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
       popupAddPlace.classList.add('popup_opened');
       popupAddPlace.querySelector('.popup__close-button_type_add-place')
         .addEventListener('click', closeModalWindow);
+    } else if(evt.target.classList.contains('element__image')) {
+      const popupImagePlace = document.querySelector('.popup_type_image-place');
+      popupImagePlace.classList.add('popup_opened');
+      popupImagePlace.querySelector('.popup__close-button_type_image-place')
+        .addEventListener('click', closeModalWindow);
     }
   }
 
   function closeModalWindow(evt) {
     evt.target.closest(".popup").classList.remove('popup_opened');
+
+    if(evt.target.classList.contains('popup__close-button_type_image-place')) {
+      deleteImagePopup(evt);
+    }
   }
 
   function initForm() {
@@ -105,10 +114,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     cardElement.querySelector('.element__delete-button').addEventListener('click', deleteCard);
 
+    cardElement.querySelector('.element__image').addEventListener('click', initImagePopup);
+
     document.querySelector('.elements__list').prepend(cardElement);
   }
 
   function deleteCard(evt) {
     evt.target.closest('.element').remove();
+  }
+
+  function initImagePopup(evt) {
+    const imagePopupTemplate = document.querySelector('#image-template').content;
+    const imagePopupElement = imagePopupTemplate.querySelector('.image-place').cloneNode(true);
+
+    imagePopupElement.querySelector('.image-place__image').src = evt.target.src;
+    imagePopupElement.querySelector('.image-place__image').alt = evt.target.alt;
+    imagePopupElement.querySelector('.image-place__caption').textContent = evt.target.alt;
+
+    document.querySelector('.popup_type_image-place').append(imagePopupElement);
+
+    openModalWindow(evt);
+  }
+
+  function deleteImagePopup(evt) {
+    evt.target.closest('.image-place').remove();
   }
 });
