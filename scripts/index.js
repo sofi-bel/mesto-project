@@ -23,7 +23,11 @@ function openModalWindow(evt) {
 }
 
 function closeModalWindow(evt) {
-  evt.target.closest(".popup").classList.remove('popup_opened');
+  closePopup(evt.target.closest(".popup"));
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 
 function initForm() {
