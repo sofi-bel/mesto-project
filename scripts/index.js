@@ -66,7 +66,7 @@ function addPlace(evt) {
   item.name = placeInput.value;
   item.link = linkInput.value;
 
-  addCard(item);
+  addCard(createCard(item));
   closeModalWindow(evt);
 
   placeInput.value = '';
@@ -102,20 +102,24 @@ function initCards() {
   ];
 
   initialCards.forEach(function(item) {
-    addCard(item)
+    addCard(createCard(item));
   });
 }
 
 initCards();
 
-function addCard(item) {
+function addCard(card) {
+  const cardList = document.querySelector('.elements__list');
+  cardList.prepend(card);
+}
+
+function createCard(item) {
   const cardTemplate = document.querySelector('#element-template').content;
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
   const cardImage = cardElement.querySelector('.element__image');
   const cardTitle = cardElement.querySelector('.element__title');
   const cardLikeButton = cardElement.querySelector('.element__like-button');
   const cardDeleteButton = cardElement.querySelector('.element__delete-button');
-  const cardList = document.querySelector('.elements__list');
 
   cardImage.src = item.link;
   cardImage.alt = item.name;
@@ -130,7 +134,7 @@ function addCard(item) {
 
   cardImage.addEventListener('click', initImagePopup);
 
-  cardList.prepend(cardElement);
+  return cardElement;
 }
 
 function deleteCard(evt) {
