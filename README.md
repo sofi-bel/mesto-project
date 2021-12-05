@@ -14,6 +14,7 @@
 ## Используемые технологии
 
 * HTML5 & CSS3
+* JavaScript
 * Flexbox
 * CSS grid
 * BEM

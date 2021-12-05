@@ -66,7 +66,8 @@
 
   <div class="popup page__popup popup_type_edit-profile">
       <div class="popup__container">
-        <button type="button" aria-label="Иконка закрытия" class="popup__close-button popup__close-button_type_edit-profile"></button>
+        <button type="button" aria-label="Иконка закрытия"
+                class="popup__close-button popup__close-button_type_edit-profile"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form form form_type_edit-profile" name="popup">
             <input name="name" type="text" class="form__input form__input_type_name" value="Жак-Ив Кусто">
@@ -78,7 +79,8 @@
 
   <div class="popup page__popup popup_type_add-place">
     <div class="popup__container">
-      <button type="button" aria-label="Иконка закрытия" class="popup__close-button popup__close-button_type_add-place"></button>
+      <button type="button" aria-label="Иконка закрытия"
+              class="popup__close-button popup__close-button_type_add-place"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form form form_type_add-place" name="popup">
         <input name="place" type="text" class="form__input form__input_type_place" placeholder="Название">
@@ -86,6 +88,17 @@
         <button type="submit" class="form__button">Сохранить</button>
       </form>
     </div>
+  </div>
+
+  <div class="popup page__popup popup_type_image-place">
+    <template id="image-template">
+      <figure class="image-place">
+        <button type="button" aria-label="Иконка закрытия"
+                class="popup__close-button popup__close-button_type_image-place"></button>
+        <img src="" alt="" class="image-place__image image">
+        <figcaption class="image-place__caption"></figcaption>
+      </figure>
+    </template>
   </div>
   <script src="scripts/index.js"></script>
 </body>
