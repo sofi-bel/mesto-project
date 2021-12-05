@@ -130,21 +130,12 @@ function deleteCard(evt) {
 }
 
 function initImagePopup(evt) {
-  const imagePopupTemplate = document.querySelector('#image-template').content;
-  const imagePopupElement = imagePopupTemplate.querySelector('.image-place').cloneNode(true);
-  const imagePopup = imagePopupElement.querySelector('.image-place__image');
-  const imageCaption = imagePopupElement.querySelector('.image-place__caption');
-  const popupImage = document.querySelector('.popup_type_image-place');
+  const imagePopup = document.querySelector('.image-place__image');
+  const imageCaption = document.querySelector('.image-place__caption');
 
   imagePopup.src = evt.target.src;
   imagePopup.alt = evt.target.alt;
   imageCaption.textContent = evt.target.alt;
 
-  popupImage.append(imagePopupElement);
-
   openModalWindow(evt);
-}
-
-function deleteImagePopup(evt) {
-  evt.target.closest('.image-place').remove();
 }
