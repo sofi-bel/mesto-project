@@ -1,6 +1,8 @@
 const profileEditButton = document.querySelector('.profile__button_type_edit');
 const addNewCardButton = document.querySelector('.profile__button_type_add');
-const closePopupButtons = document.querySelectorAll('.popup__close-button');
+const closeEditProfilePopupButton = document.querySelector('.popup__close-button_type_edit-profile');
+const closeAddPlacePopupButton = document.querySelector('.popup__close-button_type_add-place');
+const closeOpenImagePopupButton = document.querySelector('.popup__close-button_type_image-place');
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddPlace = document.querySelector('.popup_type_add-place');
 const popupImagePlace = document.querySelector('.popup_type_image-place');
@@ -17,20 +19,20 @@ const imagePopup = document.querySelector('.image-place__image');
 const imageCaption = document.querySelector('.image-place__caption');
 
 profileEditButton.addEventListener('click', handleOpenEditProfile);
-addNewCardButton.addEventListener('click', handleOpenAddPlace);
-closePopupButtons.forEach(function(item) {
-  item.addEventListener('click', closeModalWindow);
-});
+addNewCardButton.addEventListener('click', handleOpenAddPlace)
+closeEditProfilePopupButton.addEventListener('click', handleCloseEditProfile);
+closeAddPlacePopupButton.addEventListener('click', handleCloseAddPlace);
+closeOpenImagePopupButton.addEventListener('click', handleCloseImage);
 
 function handleOpenEditProfile() {
   nameInput.value  =  profileTitle.textContent.trim();
   jobInput.value =  profileSubtitle.textContent.trim();
   openPopup(popupEditProfile)
-};
+}
 
 function handleOpenAddPlace() {
   openPopup(popupAddPlace)
-};
+}
 
 function handleOpenImage(evt) {
   imagePopup.src = evt.target.src;
@@ -38,14 +40,22 @@ function handleOpenImage(evt) {
   imageCaption.textContent = evt.target.alt;
 
   openPopup(popupImagePlace)
-};
+}
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
 
-function closeModalWindow(evt) {
-  closePopup(evt.target.closest(".popup"));
+function handleCloseEditProfile() {
+  closePopup(popupEditProfile)
+}
+
+function handleCloseAddPlace() {
+  closePopup(popupAddPlace)
+}
+
+function handleCloseImage() {
+  closePopup(popupImagePlace)
 }
 
 function closePopup(popup) {
@@ -65,7 +75,7 @@ function updateProfile(evt) {
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
 
-  closeModalWindow(evt);
+  closePopup(popupEditProfile);
 }
 
 function addPlace(evt) {
@@ -76,7 +86,7 @@ function addPlace(evt) {
   item.link = linkInput.value;
 
   addCard(createCard(item));
-  closeModalWindow(evt);
+  closePopup(popupAddPlace);
 
   placeInput.value = '';
   linkInput.value = '';
