@@ -1,8 +1,8 @@
 # Проект: Место
 
-[![wakatime](https://wakatime.com/badge/user/29a8352f-15fa-421a-b8ff-a7adff87a0dc/project/5c34f503-85a4-4d37-8538-6ddee0351502.svg)](https://wakatime.com/badge/user/29a8352f-15fa-421a-b8ff-a7adff87a0dc/project/5c34f503-85a4-4d37-8538-6ddee0351502)
-![GitHub last commit](https://img.shields.io/github/last-commit/a-meti/mesto-project)
-[![GitHub license](https://img.shields.io/github/license/a-meti/mesto-project)](https://github.com/a-meti/mesto-project/blob/main/LICENSE)
+[![wakatime](https://wakatime.com/badge/user/29a8352f-15fa-421a-b8ff-a7adff87a0dc/project/5c34f503-85a4-4d37-8538-6ddee0351502.svg?style=for-the-badge&logo=appveyor)](https://wakatime.com/badge/user/29a8352f-15fa-421a-b8ff-a7adff87a0dc/project/5c34f503-85a4-4d37-8538-6ddee0351502)
+![GitHub last commit](https://img.shields.io/github/last-commit/a-meti/mesto-project?style=for-the-badge&logo=appveyor)
+[![GitHub license](https://img.shields.io/github/license/a-meti/mesto-project?style=for-the-badge&logo=appveyor)](https://github.com/a-meti/mesto-project/blob/main/LICENSE)
 
 Учебный проект для отработки адаптивной верстки в рамках обучения в [Яндекс.Практикуме Веб-разработчик плюс.](https://practicum.yandex.ru/web-plus/)
 Одностраничный сайт о Путешествии по России. Адаптированный под разные расширения экранов от 320px.
