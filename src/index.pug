@@ -1,0 +1,82 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description" content="Mesto")
+    meta(name="keywords" content="Project Mesto, Project Meston Y.Practicum, Y.Practicum, Anastasiia Metikova")
+    meta(name="author" content="Anastasiia Metikova")
+    link(
+      rel="apple-touch-icon",
+      href=require("./favicon/apple-touch-icon.png")
+    )
+    link(rel="manifest", href=require("./favicon/site.webmanifest"))
+    link(
+      rel="icon",
+      href=require("./favicon/favicon.svg"),
+      type="image/svg+xml"
+    )
+    link(rel="icon", href=require("./favicon/favicon.ico"), sizes="any")
+    meta(name="google-site-verification" content="Ea9NWQU5CDgPbBBq3ivltxc9kZ43a4avIPfmgYW5bZM")
+    title= htmlWebpackPlugin.options.title
+  body.page.page_type_centered
+    header.header.page__header
+      .header__logo
+    main.main.page__main
+      section.profile.page__profile
+        picture.profile__avatar-wrap
+          source(
+            srcset=require("./images/avatar.webp"),
+            type="image/webp"
+          )
+          img.profile__avatar(
+            src=src=require("./images/avatar.jpg"),
+            alt="User avatar"
+          )
+        .profile__info
+          .profile__title-wrapper
+            h1.profile__title
+              | Jacques-Yves Cousteau
+
+            button.profile__button.profile__button_type_edit(type="button" aria-label="edit icon").
+
+
+          p.profile__subtitle
+            | Ocean explorer
+
+        button.profile__button.profile__button_type_add(type="button" aria-label="Add Icon")
+      section.elements.page__elements(aria-label="Place cards")
+        ul.elements__list
+          template#element-template
+            li.element
+              button.element__delete-button(type="button" aria-label="Delete button")
+              img.element__image(src="" alt="")
+              .element__description
+                h2.element__title
+                button.element__like-button(type="button" aria-label="Like button")
+    footer.footer.page__footer
+      p.footer__copyright
+        | © 2021 Anastasiia Metikova
+
+    .popup.page__popup.popup_type_edit-profile
+      .popup__container
+        button.popup__close-button.popup__close-button_type_edit-profile(type="button" aria-label="close icon")
+        h2.popup__title Edit profile
+        form.popup__form.form.form_type_edit-profile(name="popup")
+          input.form__input.form__input_type_name(name="name" type="text" value="Jacques-Yves Cousteau")
+          input.form__input.form__input_type_job(name="job" type="text" value="Ocean explorer")
+          button.form__button(type="submit") Save
+    .popup.page__popup.popup_type_add-place
+      .popup__container
+        button.popup__close-button.popup__close-button_type_add-place(type="button" aria-label="close icon")
+        h2.popup__title New place
+        form.popup__form.form.form_type_add-place(name="popup")
+          input.form__input.form__input_type_place(name="place" type="text" placeholder="Name")
+          input.form__input.form__input_type_url(name="link" type="url" placeholder="Link to picture")
+          button.form__button(type="submit") Save
+    .popup.page__popup.popup_type_image-place
+      figure.image-place
+        button.popup__close-button.popup__close-button_type_image-place(type="button" aria-label="close icon")
+        img.image-place__image.image(src alt)
+        figcaption.image-place__caption

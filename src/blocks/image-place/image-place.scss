@@ -1,0 +1,14 @@
+.image-place {
+  position: relative;
+
+  &__image {
+    max-width: 75vw;
+    max-height: 75vh;
+  }
+
+  &__caption {
+    margin-top: 7px;
+    color: #fff;
+    font-size: 12px;
+  }
+}

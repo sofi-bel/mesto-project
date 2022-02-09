@@ -1,0 +1,16 @@
+.elements {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 282px));
+    grid-auto-rows: 362px;
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 1280px) {
+      grid-gap: 20px 17px;
+    }
+  }
+}

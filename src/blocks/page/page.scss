@@ -1,0 +1,55 @@
+.page {
+  min-width: 320px;
+  background-color: #000;
+  font-family: Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: 1280px) {
+    max-width: 880px;
+  }
+
+  &_type_centered {
+    margin: 0 auto;
+  }
+
+  &__header {
+    padding-top: 28px;
+
+    @media screen and (min-width: 1280px) {
+      padding-top: 45px;
+    }
+  }
+
+  &__main {
+    margin: 42px 19px 48px;
+
+    @media screen and (min-width: 1280px) {
+      margin: 40px 0 66px;
+    }
+  }
+
+  &__profile {
+    margin: 42px 0 36px;
+
+    @media screen and (min-width: 768px) {
+      margin: 40px 0 36px;
+    }
+  }
+
+  &__elements {
+    margin: 36px 0 48px;
+
+    @media screen and (min-width: 1280px) {
+      margin: 50px 0 60px;
+    }
+  }
+
+  &__footer {
+    margin: 48px 19px 36px;
+
+    @media screen and (min-width: 1280px) {
+      margin: 66px 0 60px;
+    }
+  }
+}

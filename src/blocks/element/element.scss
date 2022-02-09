@@ -1,0 +1,84 @@
+.element {
+  position: relative;
+  display: grid;
+  margin: 0;
+  padding: 0;
+
+  &__title {
+    overflow: hidden;
+    max-width: 190px;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__image {
+    object-fit: cover;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 282px;
+    max-height: 100%;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    object-position: top;
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+    border-top: 1px solid #fff;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+  }
+
+  &__delete-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 18px;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url("../images/bin.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity 1s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__like-button {
+    width: 22px;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url("../images/like-icon.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity 1s ease;
+
+    &_active {
+      background-image: url("../images/like-icon-active.svg");
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
