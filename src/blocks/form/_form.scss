@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: map.get($spaces, xs);
+  color: map.get($theme-colors, "text-inverse-color");
 
   @media (min-width: map.get($grid-breakpoints, md)) {
     gap: map.get($spaces, sm);
@@ -18,10 +19,6 @@
     border: none;
     border-bottom: 1px solid rgb(0 0 0 / 20%);
     outline: none;
-
-    &::placeholder {
-      color: map.get($theme-colors, "text-inverse-color");
-    }
   }
 
   &__button {
