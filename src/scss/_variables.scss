@@ -1,10 +1,7 @@
 $font-stack: inter, arial, sans-serif;
 $theme-colors: (
-  "primary": #006cd6,
-  "bg-light": #f2f2f2,
-  "bg-dark": #1f1f1f,
-  "text-light": #fff,
-  "text-dark": #000,
+  "bg-color": #000,
+  "text-color": #fff,
 );
 $container-max-widths: (
   md: 80rem,
@@ -37,8 +34,8 @@ $font-size: (
 );
 $font-weight: (
   "normal": 400,
-  "semi-bold": 600,
-  "bold": 700,
+  "medium": 500,
+  "black": 900,
 );
 $line-height: (
   xs: 0.94,
@@ -47,5 +44,5 @@ $line-height: (
   lg: 1.75,
 );
 $animation-duration: 20s;
-$transition-duration: 1s;
+$transition-duration: 0.3s;
 $opacity: 0.3;
