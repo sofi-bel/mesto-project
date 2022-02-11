@@ -51,7 +51,7 @@ html(lang="en")
           template#element-template
             li.element
               button.element__delete-button(type="button" aria-label="Delete button")
-              img.element__image(src="" alt="")
+              img.element__image
               .element__description
                 h2.element__title
                 button.element__like-button(type="button" aria-label="Like button")
@@ -64,19 +64,27 @@ html(lang="en")
         button.popup__close-button.popup__close-button_type_edit-profile(type="button" aria-label="close icon")
         h2.popup__title Edit profile
         form.popup__form.form.form_type_edit-profile(name="popup")
-          input.form__input.form__input_type_name(name="name" type="text" value="Jacques-Yves Cousteau")
-          input.form__input.form__input_type_job(name="job" type="text" value="Ocean explorer")
+          label.form__label.visually-hidden(for="name")
+            | Enter your name
+          input.form__input.form__input_type_name(name="name" id="name" type="text" value="Jacques-Yves Cousteau")
+          label.form__label.visually-hidden(for="job")
+            | Enter your job
+          input.form__input.form__input_type_job(name="job" id="job" type="text" value="Ocean explorer")
           button.form__button(type="submit") Save
     .popup.page__popup.popup_type_add-place
       .popup__container
         button.popup__close-button.popup__close-button_type_add-place(type="button" aria-label="close icon")
         h2.popup__title New place
         form.popup__form.form.form_type_add-place(name="popup")
-          input.form__input.form__input_type_place(name="place" type="text" placeholder="Name")
-          input.form__input.form__input_type_url(name="link" type="url" placeholder="Link to picture")
+          label.form__label.visually-hidden(for="place")
+            | Enter name of place
+          input.form__input.form__input_type_place(name="place" id="place" type="text" placeholder="Name")
+          label.form__label.visually-hidden(for="link")
+            | Enter link to image
+          input.form__input.form__input_type_url(name="link" id="link" type="url" placeholder="Link to picture")
           button.form__button(type="submit") Save
     .popup.page__popup.popup_type_image-place
       figure.image-place
         button.popup__close-button.popup__close-button_type_image-place(type="button" aria-label="close icon")
-        img.image-place__image.image(src="" alt="")
+        img.image-place__image.image(alt="")
         figcaption.image-place__caption
