@@ -120,30 +120,30 @@ function initCards() {
 initCards();
 
 function addCard(card) {
-  var cardList = document.querySelector(".elements__list");
-  cardList.prepend(card);
+  var places = document.querySelector(".places__list");
+  places.prepend(card);
 }
 
 function createCard(item) {
-  var cardTemplate = document.querySelector("#element-template").content;
-  var cardElement = cardTemplate.querySelector(".element").cloneNode(true);
-  var cardImage = cardElement.querySelector(".element__image");
-  var cardTitle = cardElement.querySelector(".element__title");
-  var cardLikeButton = cardElement.querySelector(".element__like-button");
-  var cardDeleteButton = cardElement.querySelector(".element__delete-button");
+  var cardTemplate = document.querySelector("#card-template").content;
+  var card = cardTemplate.querySelector(".card").cloneNode(true);
+  var cardImage = card.querySelector(".card__image");
+  var cardTitle = card.querySelector(".card__title");
+  var cardLikeButton = card.querySelector(".card__button_type_like");
+  var cardDeleteButton = card.querySelector(".card__button_type_delete");
   cardImage.src = item.link;
   cardImage.alt = item.name;
   cardTitle.textContent = item.name;
   cardLikeButton.addEventListener("click", function (evt) {
-    evt.target.classList.toggle("element__like-button_active");
+    evt.target.classList.toggle("card__button_type_active-like");
   });
   cardDeleteButton.addEventListener("click", deleteCard);
   cardImage.addEventListener("click", handleOpenImage);
-  return cardElement;
+  return card;
 }
 
 function deleteCard(evt) {
-  evt.target.closest(".element").remove();
+  evt.target.closest(".card").remove();
 }
 
 /***/ })
