@@ -46,15 +46,15 @@ html(lang="en")
             | Ocean explorer
 
         button.profile__button.profile__button_type_add(type="button" aria-label="Add Icon")
-      section.elements.page__elements(aria-label="Place cards")
-        ul.elements__list
-          template#element-template
-            li.element
-              button.element__delete-button(type="button" aria-label="Delete button")
-              img.element__image
-              .element__description
-                h2.element__title
-                button.element__like-button(type="button" aria-label="Like button")
+      section.places.page__places(aria-label="Place cards")
+        ul.places__list
+          template#card-template
+            li.card
+              button.card__delete-button(type="button" aria-label="Delete button")
+              img.card__image
+              .card__description
+                h2.card__title
+                button.card__like-button(type="button" aria-label="Like button")
     footer.footer.page__footer
       p.footer__copyright
         | © 2021 Anastasiia Metikova
