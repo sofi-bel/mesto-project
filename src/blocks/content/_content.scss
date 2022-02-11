@@ -1,0 +1,13 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
+.content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  gap: map.get($spaces, xs);
+
+  @media (min-width: map.get($grid-breakpoints, md)) {
+    gap: map.get($spaces, sm);
+  }
+}

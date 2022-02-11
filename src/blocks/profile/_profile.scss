@@ -1,20 +1,28 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
+$text-width: 11.75rem;
+$icon-size: 1.25rem;
+$avatar-size: 7.5rem;
+
 .profile {
   display: flex;
   flex-direction: column;
+  gap: map.get($spaces, xs);
   align-items: center;
-  color: #fff;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: map.get($grid-breakpoints, md)) {
     flex-direction: row;
+    gap: map.get($spaces, sm);
   }
 
   &__title-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
-    max-width: 189px;
+    max-width: $text-width;
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: map.get($grid-breakpoints, md)) {
       align-items: flex-end;
       justify-content: space-between;
       width: 100%;
@@ -25,32 +33,25 @@
   &__title {
     overflow: hidden;
     margin: 0;
-    font-weight: 500;
-    font-size: 27px;
-    line-height: 33px;
+    font-weight: map.get($font-weight, "medium");
+    font-size: map.get($font-size, md);
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @media screen and (min-width: 768px) {
-      margin: 0;
-      font-size: 42px;
-      line-height: 48px;
+    @media (min-width: map.get($grid-breakpoints, xl)) {
+      font-size: map.get($font-size, xl);
     }
   }
 
   &__subtitle {
     overflow: hidden;
     max-width: 100%;
-    margin: 7px 0 0;
-    font-size: 14px;
-    line-height: 17px;
+    margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @media screen and (min-width: 768px) {
-      margin: 8px 0 0;
-      font-size: 18px;
-      line-height: 22px;
+    @media (min-width: map.get($grid-breakpoints, xl)) {
+      font-size: map.get($font-size, sm);
     }
   }
 
@@ -59,16 +60,13 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 26px 0 33px;
 
-    @media screen and (min-width: 425px) {
+    @media (min-width: map.get($grid-breakpoints, sm)) {
       max-width: 50%;
     }
 
-    @media screen and (min-width: 768px) {
+    @media (min-width: map.get($grid-breakpoints, md)) {
       align-items: flex-start;
-      max-width: 336px;
-      margin: 0 0 0 30px;
     }
   }
 
@@ -82,55 +80,55 @@
     background-repeat: no-repeat;
     line-height: 0;
     cursor: pointer;
-    transition: opacity 1s ease;
+    transition: opacity $transition-duration ease;
 
     &_type_add {
       width: 100%;
-      padding: 23px 0;
-      border: 2px solid #fff;
-      border-radius: 2px;
+      padding: map.get($spaces, xs);
+      border: 2px solid map.get($theme-colors, "border-color");
+      border-radius: $border-radius-xs;
       background-image: url("../images/add-icon.svg");
 
-      @media screen and (min-width: 425px) {
+      @media (min-width: map.get($grid-breakpoints, sm)) {
         max-width: 50%;
       }
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: map.get($grid-breakpoints, md)) {
         max-width: fit-content;
         margin-left: auto;
-        padding: 23px 73px;
+        padding: map.get($spaces, xs) map.get($spaces, sm);
       }
     }
 
     &_type_edit {
       position: absolute;
       top: 0;
-      right: -27px;
+      right: -(map.get($spaces, sm));
       bottom: 0;
       align-self: center;
-      min-width: 18px;
-      height: 18px;
+      min-width: $icon-size;
+      height: $icon-size;
       margin: auto;
-      border: 1px solid #fff;
+      border: 1px solid map.get($theme-colors, "border-color");
       background-image: url("../images/edit-icon.svg");
 
-      @media screen and (min-width: 768px) {
+      @media (min-width: map.get($grid-breakpoints, md)) {
         position: relative;
         right: 0;
-        min-width: 24px;
-        height: 24px;
-        margin: 7px 0 0;
       }
     }
 
     &:hover {
-      opacity: 0.6;
+      opacity: $opacity;
     }
   }
 
+  &__avatar-wrap {
+    max-height: $avatar-size;
+  }
+
   &__avatar {
-    width: 120px;
-    height: 120px;
+    max-width: $avatar-size;
     border-radius: 50%;
   }
 }

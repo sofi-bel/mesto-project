@@ -1,15 +1,21 @@
 $font-stack: inter, arial, sans-serif;
 $theme-colors: (
   "bg-color": #000,
+  "bg-inverse-color": #fff,
+  "border-color": #fff,
   "text-color": #fff,
+  "text-inverse-color": #000,
 );
-$container-max-widths: (
-  md: 80rem,
-  lg: 100rem,
+$container-widths: (
+  xs: 320px,
+  sm: 690px,
+  md: 720px,
+  lg: 984px,
+  xl: 910px,
 );
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 425px,
   md: 768px,
   lg: 992px,
   xl: 1280px,
@@ -25,6 +31,7 @@ $spaces: (
   xxl: 15rem,
 );
 $font-size: (
+  xxs: 0.75rem,
   xs: 1.125rem,
   sm: 1.5rem,
   md: 1.953rem,
@@ -43,6 +50,8 @@ $line-height: (
   md: 1.39,
   lg: 1.75,
 );
-$animation-duration: 20s;
+$border-radius-xs: 0.125rem;
+$border-radius: 0.625rem;
 $transition-duration: 0.3s;
-$opacity: 0.3;
+$opacity: 0.6;
+$animation-duration: 0.5s;

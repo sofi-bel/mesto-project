@@ -1,16 +1,22 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
+$image-width: 17.625rem;
+$card-height: 23rem;
+
 .places {
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 282px));
-    grid-auto-rows: 362px;
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, $image-width));
+    grid-auto-rows: $card-height;
+    grid-gap: map.get($spaces, xs);
     justify-content: center;
     margin: 0;
     padding: 0;
     list-style: none;
 
-    @media screen and (min-width: 1280px) {
-      grid-gap: 20px 17px;
+    @media (min-width: map.get($grid-breakpoints, xl)) {
+      grid-gap: (map.get($spaces, sm) - map.get($spaces, xs));
     }
   }
 }

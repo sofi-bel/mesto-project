@@ -1,3 +1,6 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
 .image-place {
   position: relative;
 
@@ -7,8 +10,7 @@
   }
 
   &__caption {
-    margin-top: 7px;
-    color: #fff;
-    font-size: 12px;
+    margin-top: map.get($spaces, xxs);
+    font-size: map.get($font-size, xxs);
   }
 }

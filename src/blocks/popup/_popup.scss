@@ -1,53 +1,57 @@
+@use "sass:map";
+@import "./src/scss/variables";
+@import "./src/scss/helpers";
+
+$content-width-xs: 17.5rem;
+$content-width-md: 26.875rem;
+$close-icon-size: 1.875rem;
+
 .popup {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  @extend %fixed-full-size;
+
   z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgb(0 0 0 / 50%);
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s ease-in-out; // visibility 1s ease-in-out,
+  transition: opacity $animation-duration ease,
+    transform $animation-duration ease;
+  transform: translateY(-20px);
 
   &__container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: map.get($spaces, xs);
     box-sizing: border-box;
-    max-width: 282px;
-    padding: 25px 22px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 25px rgb(0 0 0 / 15%);
+    min-width: $content-width-xs;
+    padding: map.get($spaces, xs);
+    border-radius: $border-radius;
+    background-color: map.get($theme-colors, "bg-inverse-color");
+    box-shadow: 0 0 map.get($spaces, sm) rgb(0 0 0 / 15%);
 
-    @media screen and (min-width: 768px) {
-      max-width: 430px;
-      padding: 35px;
+    @media (min-width: map.get($grid-breakpoints, md)) {
+      gap: map.get($spaces, sm);
+      min-width: $content-width-md;
+      padding: map.get($spaces, sm);
     }
   }
 
   &__title {
-    margin: 0 0 65px;
+    margin: 0;
     padding: 0;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 22px;
-
-    @media screen and (min-width: 768px) {
-      margin: 0 0 36px;
-      font-size: 24px;
-      line-height: 29px;
-    }
+    color: map.get($theme-colors, "text-inverse-color");
+    font-weight: map.get($font-weight, "black");
+    font-size: map.get($font-size, md);
   }
 
   &__close-button {
     position: absolute;
-    top: -36px;
+    top: -(map.get($spaces, sm));
     right: 0;
-    width: 20px;
-    height: 20px;
+    width: $close-icon-size;
+    height: $close-icon-size;
     margin: 0;
     padding: 0;
     border: none;
@@ -57,17 +61,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    transition: opacity 1s ease;
+    transition: opacity $transition-duration ease;
 
-    @media screen and (min-width: 768px) {
-      top: -40px;
-      right: -40px;
-      width: 32px;
-      height: 32px;
+    @media (min-width: map.get($grid-breakpoints, md)) {
+      top: -(map.get($spaces, sm));
+      right: -(map.get($spaces, sm));
     }
 
     &:hover {
-      opacity: 0.8;
+      opacity: $opacity;
     }
   }
 
@@ -78,6 +80,6 @@
   &_opened {
     z-index: 0;
     opacity: 1;
-    visibility: visible;
+    transform: translateY(20px);
   }
 }

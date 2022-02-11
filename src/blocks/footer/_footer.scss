@@ -1,12 +1,11 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
 .footer {
-  color: #fff;
+  display: flex;
+  flex-direction: column;
 
   &__copyright {
     margin: 0;
-    font-size: 14px;
-
-    @media screen and (min-width: 1280px) {
-      font-size: 18px;
-    }
   }
 }

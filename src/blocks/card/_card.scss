@@ -1,3 +1,10 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
+$text-width: 11.875rem;
+$image-height: 17.625rem;
+$icon-size: 1.25rem;
+
 .card {
   position: relative;
   display: grid;
@@ -6,12 +13,12 @@
 
   &__title {
     overflow: hidden;
-    max-width: 190px;
+    max-width: $text-width;
     margin: 0;
     padding: 0;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
+    color: map.get($theme-colors, "text-inverse-color");
+    font-weight: map.get($font-weight, "black");
+    font-size: map.get($font-size, md);
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -20,9 +27,9 @@
     object-fit: cover;
     min-width: 100%;
     max-width: 100%;
-    min-height: 282px;
+    min-height: $image-height;
     max-height: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: $border-radius $border-radius 0 0;
     cursor: pointer;
     object-position: top;
   }
@@ -31,54 +38,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 20px;
-    border-top: 1px solid #fff;
-    border-radius: 0 0 10px 10px;
-    background-color: #fff;
+    padding: map.get($spaces, xs);
+    border-radius: 0 0 $border-radius $border-radius;
+    background-color: map.get($theme-colors, "bg-inverse-color");
   }
 
-  &__delete-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 18px;
-    height: 19px;
+  &__button {
+    width: $icon-size;
+    height: $icon-size;
     margin: 0;
     padding: 0;
     border: none;
     background-color: transparent;
-    background-image: url("../images/bin.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    transition: opacity 1s ease;
+    transition: opacity $transition-duration ease;
 
-    &:hover {
-      opacity: 0.6;
+    &_type_delete {
+      position: absolute;
+      top: map.get($spaces, xs);
+      right: map.get($spaces, xs);
+      background-image: url("../images/bin.svg");
     }
-  }
 
-  &__like-button {
-    width: 22px;
-    height: 19px;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    background-image: url("../images/like-icon.svg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: opacity 1s ease;
+    &_type_like {
+      background-image: url("../images/like-icon.svg");
+    }
 
-    &_active {
+    &_type_active-like {
       background-image: url("../images/like-icon-active.svg");
     }
 
     &:hover {
-      opacity: 0.6;
+      opacity: $opacity;
     }
   }
 }

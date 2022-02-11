@@ -1,53 +1,43 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: map.get($spaces, xs);
+
+  @media (min-width: map.get($grid-breakpoints, md)) {
+    gap: map.get($spaces, sm);
+  }
+
   &__input {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: 9px 0;
+    padding: map.get($spaces, xs) 0;
     border: none;
     border-bottom: 1px solid rgb(0 0 0 / 20%);
     outline: none;
-    font-size: 14px;
-    line-height: 17px;
-
-    @media screen and (min-width: 768px) {
-      padding: 10px 0;
-    }
-
-    &:not(:first-of-type) {
-      margin: 20px 0 0;
-      @media screen and (min-width: 768px) {
-        margin: 19px 0 0;
-      }
-    }
 
     &::placeholder {
-      color: #000;
+      color: map.get($theme-colors, "text-inverse-color");
     }
   }
 
   &__button {
     box-sizing: border-box;
     width: 100%;
-    margin: 47px 0 0;
-    padding: 14px 0;
+    margin-top: map.get($spaces, xs);
+    padding: map.get($spaces, xs) 0;
     border: none;
-    border-radius: 2px;
-    background-color: #000;
-    color: #fff;
-    font-size: 14px;
-    line-height: 18px;
+    border-radius: $border-radius-xs;
+    background-color: map.get($theme-colors, "bg-color");
+    color: map.get($theme-colors, "text-color");
     cursor: pointer;
-    transition: opacity 1s ease;
-
-    @media screen and (min-width: 768px) {
-      margin: 50px 0 0;
-      font-size: 18px;
-      line-height: 22px;
-    }
+    transition: opacity $transition-duration ease;
 
     &:hover {
-      opacity: 0.8;
+      opacity: $opacity;
     }
   }
 }

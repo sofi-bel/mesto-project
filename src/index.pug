@@ -23,7 +23,7 @@ html(lang="en")
   body.page.page_type_centered
     header.header.page__header
       .header__logo
-    main.main.page__main
+    main.content.page__content
       section.profile.page__profile
         picture.profile__avatar-wrap
           source(
@@ -50,11 +50,11 @@ html(lang="en")
         ul.places__list
           template#card-template
             li.card
-              button.card__delete-button(type="button" aria-label="Delete button")
+              button.card__button.card__button_type_delete(type="button" aria-label="Delete button")
               img.card__image
               .card__description
                 h2.card__title
-                button.card__like-button(type="button" aria-label="Like button")
+                button.card__button.card__button_type_like(type="button" aria-label="Like button")
     footer.footer.page__footer
       p.footer__copyright
         | © 2021 Anastasiia Metikova

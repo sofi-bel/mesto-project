@@ -1,55 +1,48 @@
-.page {
-  min-width: 320px;
-  background-color: #000;
-  font-family: Inter, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@use "sass:map";
+@import "./src/scss/variables";
 
-  @media screen and (min-width: 1280px) {
-    max-width: 880px;
-  }
+.page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: map.get($theme-colors, "bg-color");
+  color: map.get($theme-colors, "text-color");
+  font-weight: map.get($font-weight, "normal");
+  font-family: $font-stack;
+  line-height: map.get($line-height, lg);
 
   &_type_centered {
+    min-width: map.get($container-widths, xs);
+    max-width: map.get($container-widths, xl);
     margin: 0 auto;
   }
 
   &__header {
-    padding-top: 28px;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: map.get($spaces, xs);
 
-    @media screen and (min-width: 1280px) {
-      padding-top: 45px;
+    @media (min-width: map.get($grid-breakpoints, xl)) {
+      padding: map.get($spaces, sm) 0;
     }
   }
 
-  &__main {
-    margin: 42px 19px 48px;
+  &__content {
+    flex: 1 0 auto;
+    margin: map.get($spaces, xs) auto;
 
-    @media screen and (min-width: 1280px) {
-      margin: 40px 0 66px;
-    }
-  }
-
-  &__profile {
-    margin: 42px 0 36px;
-
-    @media screen and (min-width: 768px) {
-      margin: 40px 0 36px;
-    }
-  }
-
-  &__places {
-    margin: 36px 0 48px;
-
-    @media screen and (min-width: 1280px) {
-      margin: 50px 0 60px;
+    @media (min-width: map.get($grid-breakpoints, md)) {
+      margin: map.get($spaces, sm) 0;
     }
   }
 
   &__footer {
-    margin: 48px 19px 36px;
+    flex: 0 0 auto;
+    padding: map.get($spaces, xs);
 
-    @media screen and (min-width: 1280px) {
-      margin: 66px 0 60px;
+    @media (min-width: map.get($grid-breakpoints, xl)) {
+      padding: map.get($spaces, sm) 0;
     }
   }
 }

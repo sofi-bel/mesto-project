@@ -146,15 +146,15 @@ function createCard(item) {
   const card = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = card.querySelector(".card__image");
   const cardTitle = card.querySelector(".card__title");
-  const cardLikeButton = card.querySelector(".card__like-button");
-  const cardDeleteButton = card.querySelector(".card__delete-button");
+  const cardLikeButton = card.querySelector(".card__button_type_like");
+  const cardDeleteButton = card.querySelector(".card__button_type_delete");
 
   cardImage.src = item.link;
   cardImage.alt = item.name;
   cardTitle.textContent = item.name;
 
   cardLikeButton.addEventListener("click", function (evt) {
-    evt.target.classList.toggle("card__like-button_active");
+    evt.target.classList.toggle("card__button_type_active-like");
   });
   cardDeleteButton.addEventListener("click", deleteCard);
   cardImage.addEventListener("click", handleOpenImage);
