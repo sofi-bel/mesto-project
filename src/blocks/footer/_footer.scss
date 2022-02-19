@@ -4,8 +4,18 @@
 .footer {
   display: flex;
   flex-direction: column;
+  color: map.get($theme-colors, "text-color");
 
   &__copyright {
-    margin: 0;
+    font-size: map.get($font-size, xs);
+  }
+
+  &__author-link {
+    margin-left: map.get($spaces, xxs);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
