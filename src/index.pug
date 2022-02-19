@@ -56,8 +56,14 @@ html(lang="en")
                 h2.card__title
                 button.card__button.card__button_type_like(type="button" aria-label="Like button")
     footer.footer.page__footer
-      p.footer__copyright
-        | © 2021 Anastasiia Metikova
+      p.footer__copyright.text
+        | © 2021
+        a.footer__author-link.link(
+          href="https://www.linkedin.com/in/a-meti/",
+          target="_blank",
+          rel="noopener noreferrer"
+        )
+          | Anastasiia Metikova
 
     .popup.page__popup.popup_type_edit-profile
       .popup__container
