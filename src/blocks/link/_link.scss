@@ -1,0 +1,15 @@
+@use "sass:map";
+@import "./src/scss/variables";
+
+.link {
+  color: inherit;
+  font-size: map.get($font-size, xs);
+  text-decoration: underline;
+  transition: opacity $transition-duration ease-out;
+
+  &:hover {
+    @media (min-width: map.get($grid-breakpoints, lg)) {
+      opacity: $opacity;
+    }
+  }
+}
