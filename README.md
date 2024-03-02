@@ -53,6 +53,10 @@ Development mode
 ```
 yarn dev
 ```
+
+## Layout
+
+[Link to layout in Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=0-1&mode=design)
 ## Demo
 
-[Look at the result.](https://sofi-bel.github.io/mesto-project/)
+[Look at the result](https://sofi-bel.github.io/mesto-project/)
