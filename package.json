@@ -78,7 +78,7 @@
     "stylelint-scss": "^5.0.1",
     "webpack": "^5.69.1",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.7.4",
+    "webpack-dev-server": "^5.0.2",
     "webpack-webmanifest-loader": "^2.0.2"
   },
   "dependencies": {
