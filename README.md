@@ -15,48 +15,59 @@
 </div>
 
 ## Template for Stack
-* HTML5 & CSS3
-* Pug
-* SCSS
-* JavaScript
-* Flexbox
-* CSS grid
-* BEM
-* Adaptive web design
-* Responsive web design
-* Mobile first
-* Media queries
-* Web accessibility
-* Relative units
-* Semantic layout
-* Webpack
+
+- HTML5 & CSS3
+- Pug
+- SCSS
+- JavaScript
+- Flexbox
+- CSS grid
+- BEM
+- Adaptive web design
+- Responsive web design
+- Mobile first
+- Media queries
+- Web accessibility
+- Relative units
+- Semantic layout
+- Webpack
 
 ## Build Setup
+
 Clone the repo
 
 ```
 git clone https://github.com/sofi-bel/mesto-project.git
 ```
+
 Install dependencies
+
 ```
-yarn install
+npm install
 ```
+
 Server with hot reload at http://localhost:9000/
+
 ```
-yarn start
+npm start
 ```
+
 Production Build
+
 ```
-yarn build
+npm run build
 ```
+
 Development mode
+
 ```
-yarn dev
+npm run dev
 ```
 
 ## Layout
 
 [Link to layout in Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=0-1&mode=design)
+
 ## Demo
 
 [Look at the result](https://sofi-bel.github.io/mesto-project/)
