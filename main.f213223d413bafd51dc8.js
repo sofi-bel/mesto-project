@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[179],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[792],{
 
-/***/ 90:
+/***/ 114:
 /***/ (function() {
 
 
@@ -29,58 +29,46 @@ addNewCardButton.addEventListener("click", handleOpenAddPlace);
 closeEditProfilePopupButton.addEventListener("click", handleCloseEditProfile);
 closeAddPlacePopupButton.addEventListener("click", handleCloseAddPlace);
 closeOpenImagePopupButton.addEventListener("click", handleCloseImage);
-
 function handleOpenEditProfile() {
   nameInput.value = profileTitle.textContent.trim();
   jobInput.value = profileSubtitle.textContent.trim();
   openPopup(popupEditProfile);
 }
-
 function handleOpenAddPlace() {
   openPopup(popupAddPlace);
 }
-
 function handleOpenImage(evt) {
   imagePopup.src = evt.target.src;
   imagePopup.alt = evt.target.alt;
   imageCaption.textContent = evt.target.alt;
   openPopup(popupImagePlace);
 }
-
 function openPopup(popup) {
   popup.classList.add("popup_opened");
 }
-
 function handleCloseEditProfile() {
   closePopup(popupEditProfile);
 }
-
 function handleCloseAddPlace() {
   closePopup(popupAddPlace);
 }
-
 function handleCloseImage() {
   closePopup(popupImagePlace);
 }
-
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
-
 function initForm() {
   editProfileForm.addEventListener("submit", updateProfile);
   addPlaceForm.addEventListener("submit", addPlace);
 }
-
 initForm();
-
 function updateProfile(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(popupEditProfile);
 }
-
 function addPlace(evt) {
   evt.preventDefault();
   const item = [];
@@ -91,7 +79,6 @@ function addPlace(evt) {
   placeInput.value = "";
   linkInput.value = "";
 }
-
 function initCards() {
   const initialCards = [{
     name: "Arkhyz",
@@ -116,14 +103,11 @@ function initCards() {
     addCard(createCard(item));
   });
 }
-
 initCards();
-
 function addCard(card) {
   const places = document.querySelector(".places__list");
   places.prepend(card);
 }
-
 function createCard(item) {
   const cardTemplate = document.querySelector("#card-template").content;
   const card = cardTemplate.querySelector(".card").cloneNode(true);
@@ -141,7 +125,6 @@ function createCard(item) {
   cardImage.addEventListener("click", handleOpenImage);
   return card;
 }
-
 function deleteCard(evt) {
   evt.target.closest(".card").remove();
 }
@@ -151,6 +134,6 @@ function deleteCard(evt) {
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ var __webpack_exports__ = (__webpack_exec__(90));
+/******/ var __webpack_exports__ = (__webpack_exec__(114));
 /******/ }
 ]);
